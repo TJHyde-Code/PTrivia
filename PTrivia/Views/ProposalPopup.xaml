@@ -1,0 +1,90 @@
+<toolkit:Popup
+    x:Class="PTrivia.Views.ProposalPopup"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:toolkitMedia="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui.MediaElement"
+    Size="Fill">
+
+    <Grid x:Name="RootLayout">
+
+        
+        <Image Source="proposal_bckg.jpg"
+               Aspect="AspectFill"
+               Opacity="1.0"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="FillAndExpand"
+               IsVisible="True" />
+
+        
+        <Frame BackgroundColor="Transparent"
+               BorderColor="#C2185B"
+               CornerRadius="30"
+               Padding="40"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               WidthRequest="600"
+               HeightRequest="500"
+               HasShadow="False">
+
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />                    
+                    <RowDefinition Height="Auto" />                  
+                </Grid.RowDefinitions>
+
+                <StackLayout Grid.Row="1"
+                             Spacing="25"
+                             HorizontalOptions="Center"
+                             VerticalOptions="End"
+                             Padding="10,20">
+
+                    
+                    <Label x:Name="proposalMessage"
+                           FontSize="20"
+                           TextColor="#C2185B"
+                           HorizontalTextAlignment="Center"
+                           BackgroundColor="Transparent">
+                        <Label.Shadow>
+                            <Shadow Brush="Black"
+                                    Offset="1,1"
+                                    Opacity="0.8"
+                                    Radius="2" />
+                        </Label.Shadow>
+                    </Label>
+
+                    
+                    <Label Text="💍 Will You Marry Me?"
+                           TextColor="#C2185B"
+                           FontSize="36"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center">
+                        <Label.Shadow>
+                            <Shadow Brush="Black"
+                                    Offset="1,1"
+                                    Opacity="0.8"
+                                    Radius="2" />
+                        </Label.Shadow>
+                    </Label>
+
+                    <!-- Yes button -->
+                    <Button Text="🥰 YES!"
+                            BackgroundColor="#E91E63"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            Clicked="OnYesClicked"
+                            WidthRequest="120"
+                            HorizontalOptions="Center" />
+                </StackLayout>
+            </Grid>
+        </Frame>
+
+        <!-- Optional: background music -->
+        <toolkitMedia:MediaElement x:Name="mediaPlayer"
+                                   ShouldAutoPlay="False"
+                                   ShouldLoopPlayback="True"
+                                   ShouldShowPlaybackControls="True"
+                                   IsVisible="False" />
+    </Grid>
+</toolkit:Popup>

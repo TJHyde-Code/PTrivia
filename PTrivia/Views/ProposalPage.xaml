@@ -1,0 +1,88 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:m="clr-namespace:PTrivia.Models"
+             xmlns:d="clr-namespace:PTrivia.Data"    
+             xmlns:v="clr-namespace:PTrivia.ViewModels"
+             x:Class="PTrivia.Views.ProposalPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20,50,20,20" 
+            Spacing="25">
+
+            
+            <Label x:Name="scoreLabel"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   TextColor="DarkBlue"
+                   HorizontalOptions="Center" />
+
+           
+            <Label Text="One Last Question..."
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   TextColor="DarkBlue"
+                   HorizontalOptions="Center" />
+
+           
+            <Image x:Name="proposalImage"
+                   Source="propal_question.png"
+                   Aspect="AspectFit"
+                   Opacity="0"
+                   HeightRequest="250"
+                   HorizontalOptions="Center"
+                   Margin="0" />
+
+          
+            <Label x:Name="questionLabel"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" />
+
+            <HorizontalStackLayout Spacing="8" HorizontalOptions="Center" VerticalOptions="Center">
+
+                <Label x:Name="welcomeLabel"
+                       FontSize="18"
+                       TextColor="DarkSlateBlue"
+                       VerticalOptions="Center" />
+
+                <Entry x:Name="entryAnswer1"
+                       Placeholder="I"
+                       WidthRequest="60"
+                       TextChanged="OnTextChanged" />
+
+                <Entry x:Name="entryAnswer2"
+                       Placeholder="Love"
+                       WidthRequest="60"
+                       TextChanged="OnTextChanged" />
+
+                <Entry x:Name="entryAnswer3"
+                       Placeholder="Your"
+                       WidthRequest="60"
+                       TextChanged="OnTextChanged" />
+
+                <Entry x:Name="entryAnswer4"
+                       Placeholder="Face"
+                       WidthRequest="60"
+                       TextChanged="OnTextChanged" />
+
+                <Label Text="?"
+                       FontSize="18"
+                       TextColor="DarkSlateBlue"
+                       VerticalOptions="Center" />
+
+            </HorizontalStackLayout>
+
+            <!-- Submit Button -->
+            <Button x:Name="btnProposal"
+                    Text="Yes?"
+                    Clicked="btnProposal_Clicked"
+                    BackgroundColor="#8e44ad"
+                    WidthRequest="85"
+                    TextColor="White"
+                    HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

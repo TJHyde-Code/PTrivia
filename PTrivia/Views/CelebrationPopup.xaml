@@ -1,0 +1,49 @@
+<toolkit:Popup
+    x:Class="PTrivia.Views.CelebrationPopup"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:toolkitMedia="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui.MediaElement"
+    Size="Fill">
+
+    <Grid BackgroundColor="#99000000">
+        <Frame
+            BackgroundColor="White"
+            Padding="25"
+            CornerRadius="20"
+            WidthRequest="280"
+            HeightRequest="220"            
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            HasShadow="True">
+
+            <StackLayout HorizontalOptions="Center" Spacing="15">
+                <Label x:Name="resultMessageLabel"
+                           FontSize="20"
+                           TextColor="Black"
+                           HorizontalTextAlignment="Center"
+                           BackgroundColor="Transparent"/>
+
+                    <Label x:Name="pointsEarnedLabel"
+                           FontSize="18"
+                           TextColor="#4CAF50"
+                           HorizontalTextAlignment="Center"
+                           BackgroundColor="Transparent"/>
+
+                <toolkitMedia:MediaElement
+                            x:Name="celebrationSound"
+                            Source="woohoo.wav"
+                            IsVisible="False"
+                            ShouldAutoPlay="True"
+                            ShouldLoopPlayback="False" />   
+
+                <Button Text="Continue"
+                        Clicked="OnContinueClicked"
+                         BackgroundColor="#512DA8"
+                         TextColor="White"
+                        WidthRequest="150"
+                        HorizontalOptions="Center" />
+            </StackLayout>
+        </Frame>
+    </Grid>
+</toolkit:Popup>

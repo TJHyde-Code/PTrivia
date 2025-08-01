@@ -1,0 +1,55 @@
+﻿<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:m="clr-namespace:PTrivia.Models"
+    x:Class="PTrivia.MainPage"
+    Title="P-Trivia">
+
+    <ContentPage.Content>
+        <Grid Padding="20">
+            <StackLayout 
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                Spacing="40">
+
+                <Image 
+                    Source="doorlanding.png" 
+                    Aspect="AspectFit"
+                    WidthRequest="300" 
+                    HeightRequest="300" 
+                    HorizontalOptions="Center" />
+
+
+                <Label 
+                    Text="YATA" 
+                    FontSize="36"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    TextColor="DarkBlue" />
+                
+                <Label 
+                    Text="(Yet Another Trivia App )"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    TextColor="DarkBlue" />
+
+                
+                <Label 
+                    Text="Test your knowledge of love, lyrics, and lore!"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    TextColor="Gray" />
+               
+                <Button 
+                    Text="Start Trivia" 
+                    FontSize="20"
+                    Padding="16"
+                    CornerRadius="12"
+                    BackgroundColor="#512DA8"
+                    TextColor="White"
+                    Clicked="StartTriviaClicked"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

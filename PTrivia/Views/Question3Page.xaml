@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:m="clr-namespace:PTrivia.Models"
+             xmlns:d="clr-namespace:PTrivia.Data"    
+             xmlns:v="clr-namespace:PTrivia.ViewModels"
+             x:Class="PTrivia.Views.Question3Page"
+             Title="Grab Bag!">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+           
+            <Label x:Name="welcomeLabel"
+                   FontSize="20"
+                   TextColor="DarkBlue"
+                   HorizontalOptions="Center" />
+
+            <Label x:Name="scoreLabel"
+                   FontSize="16"
+                   TextColor="DarkGreen"
+                   HorizontalOptions="Center" />
+
+           
+            <Label x:Name="questionLabel"
+                   Text="Loading question..."
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   HorizontalOptions="Center"
+                   Margin="0,10" />
+
+            
+            <Entry x:Name="entryAnswer"
+                  WidthRequest="100"
+                   TextChanged="OnTextChanged" />
+
+            
+            <Button x:Name="btnQuestion3"
+                     Text="OK"
+                     FontSize="18"
+                     WidthRequest="80"
+                    Clicked="btnQuestion3_Clicked"                    
+                    BackgroundColor="#007aff"
+                    TextColor="White" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
