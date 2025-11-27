@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:toolkitMedia="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui.MediaElement"
-    Size="Fill">
+    >
 
     <Grid x:Name="RootLayout">
 
@@ -12,26 +12,26 @@
         <Image Source="proposal_bckg.jpg"
                Aspect="AspectFill"
                Opacity="1.0"
-               HorizontalOptions="FillAndExpand"
-               VerticalOptions="FillAndExpand"
+               HorizontalOptions="Fill"
+               VerticalOptions="Fill"
                IsVisible="True" />
 
-        
-        <Frame BackgroundColor="Transparent"
-               BorderColor="#C2185B"
-               CornerRadius="30"
+
+        <Border Background="Transparent"
+               Stroke="#C2185B"
+               StrokeShape="RoundRectangle 30"
                Padding="40"
                HorizontalOptions="Center"
                VerticalOptions="Center"
                WidthRequest="600"
                HeightRequest="500"
-               HasShadow="False">
+               Grid.Row="0">
 
-            
+
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />                    
-                    <RowDefinition Height="Auto" />                  
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
                 <StackLayout Grid.Row="1"
@@ -40,7 +40,7 @@
                              VerticalOptions="End"
                              Padding="10,20">
 
-                    
+
                     <Label x:Name="proposalMessage"
                            FontSize="20"
                            TextColor="#C2185B"
@@ -54,7 +54,7 @@
                         </Label.Shadow>
                     </Label>
 
-                    
+
                     <Label Text="💍 Will You Marry Me?"
                            TextColor="#C2185B"
                            FontSize="36"
@@ -78,7 +78,7 @@
                             HorizontalOptions="Center" />
                 </StackLayout>
             </Grid>
-        </Frame>
+        </Border>
 
         <!-- Optional: background music -->
         <toolkitMedia:MediaElement x:Name="mediaPlayer"

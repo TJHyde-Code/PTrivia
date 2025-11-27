@@ -5,6 +5,7 @@ using PTrivia.ViewModels;
 using System.Text;
 using PTrivia.Views;
 using CommunityToolkit.Maui.Views;
+using CommunityToolkit.Maui.Extensions;
 
 namespace PTrivia.Views;
 
@@ -51,7 +52,7 @@ public partial class Question3Page : ContentPage
         catch (Exception)
         {
 
-            await DisplayAlert("Error", "Could not load the question", "OK");
+            await DisplayAlertAsync("Error", "Could not load the question", "OK");
             questionLabel.Text = "Oops! could not load a question. Check connection or Wi-Fi";
         }
     }
@@ -111,7 +112,7 @@ public partial class Question3Page : ContentPage
         else
         {
             tryCount++;
-            await DisplayAlert("Try again!", $"You have {3 - tryCount} tries left!!", "OK");
+            await DisplayAlertAsync("Try again!", $"You have {3 - tryCount} tries left!!", "OK");
             entryAnswer.Text = "";
             entryAnswer.Focus();
             btnQuestion3.IsEnabled = false;
@@ -120,13 +121,13 @@ public partial class Question3Page : ContentPage
         //Feedback to user on attempts left
         if(tryCount > 3)
         {
-            await DisplayAlert("Oopsie!", "Too many tries", "Ok");
+            await DisplayAlertAsync("Oopsie!", "Too many tries", "Ok");
             await ShowData();
             return;
         }
         else
         {
-            await DisplayAlert("Nice try!", $"Sorry that's not quite right. You have {3 - tryCount} attempt(s) left.", "OK");
+            await DisplayAlertAsync("Nice try!", $"Sorry that's not quite right. You have {3 - tryCount} attempt(s) left.", "OK");
             entryAnswer.Text = "";
             entryAnswer.Focus();
         }

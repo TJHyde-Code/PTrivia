@@ -24,7 +24,8 @@ public partial class CelebrationPopup : Popup
 
     private async void OnContinueClicked(object sender, EventArgs e)
     {
-        this.Close();
+        //await this.CloseAsync();
+        await CloseAsync();
         await Task.Delay(300);
     }
 

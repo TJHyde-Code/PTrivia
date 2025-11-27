@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
+		<TargetFrameworks>net10.0-android;net10.0-ios;net10.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net10.0-windows10.0.19041.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net8.0-tizen</TargetFrameworks> -->
 
@@ -20,13 +20,8 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 
-		<!-- Display name -->
 		<ApplicationTitle>PTrivia</ApplicationTitle>
-
-		<!-- App Identifier -->
 		<ApplicationId>com.companyname.ptrivia</ApplicationId>
-
-		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 
@@ -39,27 +34,15 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<!-- App Icon -->
-		<!--<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />-->
 		<MauiIcon Include="Resources\AppIcon\app_icon.png" />
-
-		<!-- Splash Screen -->
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
-
-		<!-- Images -->
 		<MauiImage Include="Resources\Images\proposal_bckg.jpg" />
 		<MauiImage Include="Resources\Images\wot.png" />
 		<MauiImage Include="Resources\Images\propal_question.png" />
 		<MauiImage Include="Resources\Images\usbutold.jpg" />
 		<MauiImage Include="Resources\Images\doorlanding.png" />
 		<MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
-		
-
-		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
-
-		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
-		<!--<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />-->
 		<MauiAsset Include="Resources\Raw\thegirl.wav" LogicalName="thegirl.wav" />
 		<MauiAsset Include="Resources\Raw\woohoo.wav" LogicalName="woohoo.wav" />
 		<MauiAsset Include="Resources\Raw\growold.wav" LogicalName="growold.wav" />
@@ -75,12 +58,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Maui" Version="8.0.0" />
-		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="4.1.2" />
+		<!-- Keep toolkit/media and other packages; align MAUI package versions to avoid downgrade -->
+		<PackageReference Include="CommunityToolkit.Maui" Version="13.0.0" />
+		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="7.0.0" />
 		<PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+
+		<!-- Explicitly satisfy required MAUI version to prevent NU1605 downgrade -->
+		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.10" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="10.0.10" />
+
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>

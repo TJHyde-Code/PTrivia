@@ -4,18 +4,18 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:toolkitMedia="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui.MediaElement"
-    Size="Fill">
+    >
 
     <Grid BackgroundColor="#99000000">
-        <Frame
-            BackgroundColor="White"
+        <Border
+            Stroke="White"
             Padding="25"
-            CornerRadius="20"
+            StrokeShape="RoundRectangle 20"
             WidthRequest="280"
             HeightRequest="220"            
             HorizontalOptions="Center"
             VerticalOptions="Center"
-            HasShadow="True">
+            >
 
             <StackLayout HorizontalOptions="Center" Spacing="15">
                 <Label x:Name="resultMessageLabel"
@@ -44,6 +44,6 @@
                         WidthRequest="150"
                         HorizontalOptions="Center" />
             </StackLayout>
-        </Frame>
+        </Border>
     </Grid>
 </toolkit:Popup>

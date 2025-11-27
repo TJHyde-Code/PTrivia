@@ -1,8 +1,7 @@
 using CommunityToolkit.Maui.Media;
 using CommunityToolkit.Maui.Views;
 using CommunityToolkit.Maui.Core;
-using CommunityToolkit.Maui.Views;
-using CommunityToolkit.Maui.Core;
+
 
 namespace PTrivia.Views;
 

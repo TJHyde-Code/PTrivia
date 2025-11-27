@@ -5,6 +5,7 @@ using PTrivia.ViewModels;
 using System.Text;
 using PTrivia.Views;
 using CommunityToolkit.Maui.Views;
+using CommunityToolkit.Maui.Extensions;
 
 namespace PTrivia;
 
@@ -49,7 +50,7 @@ public partial class SongQuestionPage : ContentPage
         }
         catch (Exception)
         {
-            await DisplayAlert("Error", "Could not load the song question", "OK");
+            await DisplayAlertAsync("Error", "Could not load the song question", "OK");
             questionLabel.Text = "Oops! Could not load a question.";
         }
     }
@@ -67,7 +68,7 @@ public partial class SongQuestionPage : ContentPage
         btnSongAnswer.IsEnabled = true;
         if (string.IsNullOrEmpty(userAnswer))
         {
-            await DisplayAlert("Oops!", "Art is subjective and all but all songs have titles!", "OK");
+            await DisplayAlertAsync("Oops!", "Art is subjective and all but all songs have titles!", "OK");
             needRefresh = false;
             return;
         }                
@@ -111,13 +112,13 @@ public partial class SongQuestionPage : ContentPage
         //Feedback to user on attempts left
         if (tryCount > 3)
         {
-            await DisplayAlert("Oopsie!", "Too many tries", "Ok");
+            await DisplayAlertAsync("Oopsie!", "Too many tries", "Ok");
             await ShowData();
             return;
         }
         else
         {
-            await DisplayAlert("Nice try!", $"Sorry that's not quite right though. You have {3 - tryCount} attempt(s) left.", "OK");
+            await DisplayAlertAsync("Nice try!", $"Sorry that's not quite right though. You have {3 - tryCount} attempt(s) left.", "OK");
             songEntry.Text = "";
             songEntry.Focus();
         }       
