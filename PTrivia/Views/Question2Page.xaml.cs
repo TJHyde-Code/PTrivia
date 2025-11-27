@@ -5,6 +5,7 @@ using PTrivia.ViewModels;
 using System.Text;
 using PTrivia.Views;
 using CommunityToolkit.Maui.Views;
+using CommunityToolkit.Maui.Extensions;
 
 namespace PTrivia.Views;
 
@@ -49,7 +50,7 @@ public partial class Question2Page : ContentPage
 		}
 		catch (Exception)
 		{
-            await DisplayAlert("Error", "Could not load the question", "OK");
+            await DisplayAlertAsync("Error", "Could not load the question", "OK");
             questionLabel.Text = "Oops! Could not load a question.";
         }
 	}
@@ -110,7 +111,7 @@ public partial class Question2Page : ContentPage
 		else
 		{
             tryCount++;
-            await DisplayAlert("Try again!", $"You got {correctCount} parts right! \n You have {3 - tryCount} tries left.", "OK");
+            await DisplayAlertAsync("Try again!", $"You got {correctCount} parts right! \n You have {3 - tryCount} tries left.", "OK");
             entryAnswer1.Text = "";
             entryAnswer2.Text = "";            
             entryAnswer1.Focus();
@@ -120,13 +121,13 @@ public partial class Question2Page : ContentPage
         //Feedback to user on attempts left
         if (tryCount > 3)
         {
-            await DisplayAlert("Oopsie!", "Too many tries", "Ok");
+            await DisplayAlertAsync("Oopsie!", "Too many tries", "Ok");
             await ShowData();
             return;
         }
         else
         {
-            await DisplayAlert("Nice try!", $"Sorry that's not quite right though. You have {3 - tryCount} attempt(s) left.", "OK");
+            await DisplayAlertAsync("Nice try!", $"Sorry that's not quite right though. You have {3 - tryCount} attempt(s) left.", "OK");
             entryAnswer1.Text = "";
             entryAnswer2.Text = "";            
             entryAnswer1.Focus();

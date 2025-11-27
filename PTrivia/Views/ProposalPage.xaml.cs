@@ -5,6 +5,7 @@ using PTrivia.ViewModels;
 using System.Text;
 using PTrivia.Views;
 using CommunityToolkit.Maui.Views;
+using CommunityToolkit.Maui.Extensions;
 
 namespace PTrivia.Views;
 
@@ -49,7 +50,7 @@ public partial class ProposalPage : ContentPage
         }
         catch (Exception)
         {
-            await DisplayAlert("Error", "Could not load the question", "OK");
+            await DisplayAlertAsync("Error", "Could not load the question", "OK");
             questionLabel.Text = "Oops! Could not load a question.";
         }
     }
@@ -74,15 +75,16 @@ public partial class ProposalPage : ContentPage
 
         double targetOpacity = 0.05 + easedProgress * 0.95;
 
-        await proposalImage.FadeTo(targetOpacity, 250);
+        await proposalImage.FadeToAsync(targetOpacity, 250);
 
     }
 
-    private async void ShowProposalPopup()
-    {
-        var popup = new ProposalPopup(); 
-        await this.ShowPopupAsync(popup);
-    }
+    //Unused call. Clicked event handler calls the Popup directly.
+    //private async void ShowProposalPopup()
+    //{
+    //    var popup = new ProposalPopup(); 
+    //    await this.ShowPopupAsync(popup);
+    //}
     private async void btnProposal_Clicked(object sender, EventArgs e)
     {
         string answer1 = entryAnswer1.Text?.Trim().ToLower() ?? "";
@@ -124,7 +126,7 @@ public partial class ProposalPage : ContentPage
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Error", $"Popup failed: {ex.Message}", "OK");
+                await DisplayAlertAsync("Error", $"Popup failed: {ex.Message}", "OK");
             }
 
             //await this.ShowPopupAsync(new ProposalPopup());
@@ -134,7 +136,7 @@ public partial class ProposalPage : ContentPage
         else
         {
             tryCount++;
-            await DisplayAlert("Try again!", $"You got {correctCount} parts right! \n You have {3 - tryCount} tries left.", "OK");
+            await DisplayAlertAsync("Try again!", $"You got {correctCount} parts right! \n You have {3 - tryCount} tries left.", "OK");
             entryAnswer1.Text = "";
             entryAnswer2.Text = "";
             entryAnswer3.Text = "";
@@ -146,13 +148,13 @@ public partial class ProposalPage : ContentPage
         //Feedback to user on attempts left
         if (tryCount > 3)
         {
-            await DisplayAlert("Ouch!", "This should be easy!", "Ok");
+            await DisplayAlertAsync("Ouch!", "This should be easy!", "Ok");
             await ShowData();
             return;
         }
         else
         {
-            await DisplayAlert("Nice try!", $"Sorry that's not quite right. You have {3 - tryCount} attempt(s) left.", "OK");
+            await DisplayAlertAsync("Nice try!", $"Sorry that's not quite right. You have {3 - tryCount} attempt(s) left.", "OK");
             entryAnswer1.Text = "";
             entryAnswer2.Text = "";
             entryAnswer3.Text = "";

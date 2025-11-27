@@ -16,10 +16,12 @@ public partial class ProposalPopup : Popup
 {
 
 
-    //private MediaElement mediaPlayer;
+    //private MediaElement? mediaPlayer;
     public ProposalPopup()
     {
         InitializeComponent();
+
+       // mediaPlayer = this.FindByName<MediaElement>("mediaPlayer");
 
         // Set the personalized message
         proposalMessage.Text = $"You’ve made it through every question, {UserName.User}... \n But I want to be sure!!";
@@ -46,7 +48,7 @@ public partial class ProposalPopup : Popup
 
     //Event Handler for when/if they accidentally click off the popup to pause the music.
     //Double protecting as clicking off the popup is disabled.
-    private void OnPopupClosed(object? sender, PopupClosedEventArgs e)
+    private void OnPopupClosed(object? sender, EventArgs e)
     {
         mediaPlayer?.Pause();
     }
@@ -54,7 +56,7 @@ public partial class ProposalPopup : Popup
     private async void OnYesClicked(object sender, EventArgs e)
     {
         mediaPlayer?.Pause(); // Stop music
-        this.Close();        
+        await this.CloseAsync();        
         await Shell.Current.GoToAsync(nameof(TheBeginning));         
     }   
 }
