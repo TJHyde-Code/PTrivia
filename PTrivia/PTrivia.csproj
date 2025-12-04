@@ -60,7 +60,7 @@
 	<ItemGroup>
 		<!-- Keep toolkit/media and other packages; align MAUI package versions to avoid downgrade -->
 		<PackageReference Include="CommunityToolkit.Maui" Version="13.0.0" />
-		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="7.0.0" />
+		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="6.1.3" />
 		<PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />
 
 		<!-- Explicitly satisfy required MAUI version to prevent NU1605 downgrade -->
