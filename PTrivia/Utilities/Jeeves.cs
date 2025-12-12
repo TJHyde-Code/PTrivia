@@ -12,7 +12,7 @@ namespace PTrivia.Utilities
         
         //Use local.
 
-        public static Uri DBUri = new Uri("https://finalprojectwebapi.azurewebsites.net");
+        public static Uri DBUri = new Uri("https://finalprojectwebapi1-dra7a7gfdtfubaft.canadaeast-01.azurewebsites.net");
 
 
         //-----------------------------------------------------------------------------------------------------------------
