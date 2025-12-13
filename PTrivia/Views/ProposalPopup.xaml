@@ -10,7 +10,7 @@
 
         
         <Image Source="proposal_bckg.jpg"
-               Aspect="AspectFill"
+               Aspect="AspectFit"
                Opacity="1.0"
                HorizontalOptions="Fill"
                VerticalOptions="Fill"

@@ -8,9 +8,8 @@ namespace PTrivia.Utilities
         //For Local API
         //public static Uri DBUri = new Uri("https://localhost:7247");
 
-        //For Azure
-        
-        //Use local.
+        //For Azure       
+       
 
         public static Uri DBUri = new Uri("https://finalprojectwebapi1-dra7a7gfdtfubaft.canadaeast-01.azurewebsites.net");
 

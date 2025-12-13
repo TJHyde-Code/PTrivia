@@ -5,8 +5,10 @@
              x:Class="PTrivia.Views.TheBeginning"
              Title="The Beginning">
 
-    <Grid>
+    <!-- Root grid controls overall page layout and responsiveness -->
+    <Grid RowDefinitions="Auto,*">
 
+        <!-- MediaElement sits at the top layer and does not affect layout -->
         <toolkitMedia:MediaElement
             x:Name="growOld"
             Source="growold.wav"
@@ -14,41 +16,49 @@
             ShouldLoopPlayback="False"
             ShouldShowPlaybackControls="False" />
 
-        
-        <ScrollView>
-            <StackLayout Padding="30" Spacing="25" VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+        <!-- Main content container -->
+        <Grid Row="1"
+              Padding="30"
+              RowDefinitions="Auto,Auto,Auto"
+              VerticalOptions="Center"
+              HorizontalOptions="Center">
 
-                
-                <Frame Padding="0"
-                       BorderColor="#8e44ad"
-                       CornerRadius="20"
-                       HasShadow="True"
+            <!-- Image section -->
+            <Border Grid.Row="0"
+                    Stroke="#8e44ad"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 20"
+                    WidthRequest="250"
+                    HeightRequest="250"
+                    HorizontalOptions="Center">
+                <Image Source="usbutold.jpg"
+                       Aspect="AspectFill"
                        WidthRequest="250"
                        HeightRequest="250"
-                       HorizontalOptions="Center">
-                    <Image Source="usbutold.jpg"
-                           Aspect="AspectFill"
-                           WidthRequest="250"
-                           HeightRequest="250"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center" />
-                </Frame>
-
-                <Label Text="No more questions. Just wanted to say I love you and play another song! Also this is us old according to AI!"
-                       TextColor="White"
-                       FontSize="20"
                        HorizontalOptions="Center"
-                       HorizontalTextAlignment="Center"/>
+                       VerticalOptions="Center" />
+            </Border>
 
-                <Button x:Name="btnAppClose"                    
-                        Text="Start Life Together"
-                        Clicked="btnAppClose_Clicked"
-                        BackgroundColor="#8e44ad"
-                        WidthRequest="180"
-                        TextColor="White"
-                        HorizontalOptions="Center" />
+            <!-- Text section -->
+            <Label Grid.Row="1"
+                   Margin="0,25,0,0"
+                   Text="No more questions. Just wanted to say I love you and play another song! Also this is us old according to AI!"
+                   TextColor="White"
+                   FontSize="20"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" />
 
-            </StackLayout>
-        </ScrollView>
+            <!-- Button section -->
+            <Button Grid.Row="2"
+                    x:Name="btnAppClose"
+                    Margin="0,25,0,0"
+                    Text="Start Life Together"
+                    Clicked="btnAppClose_Clicked"
+                    BackgroundColor="#8e44ad"
+                    WidthRequest="180"
+                    TextColor="White"
+                    HorizontalOptions="Center" />
+
+        </Grid>
     </Grid>
 </ContentPage>

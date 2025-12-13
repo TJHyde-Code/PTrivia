@@ -25,7 +25,7 @@
 
            
             <Image x:Name="proposalImage"
-                   Source="propal_question.png"
+                   Source="ring.png"
                    Aspect="AspectFit"
                    Opacity="0"
                    HeightRequest="250"
