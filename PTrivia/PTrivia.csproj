@@ -41,6 +41,7 @@
 		<MauiImage Include="Resources\Images\propal_question.png" />
 		<MauiImage Include="Resources\Images\usbutold.jpg" />
 		<MauiImage Include="Resources\Images\doorlanding.png" />
+		<MauiImage Include="Resources\Images\ring.png" />	
 		<MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
 		<MauiFont Include="Resources\Fonts\*" />
 		<MauiAsset Include="Resources\Raw\thegirl.wav" LogicalName="thegirl.wav" />
@@ -54,7 +55,8 @@
 	  <None Remove="Resources\Raw\thegirl.mp3" />
 	  <None Remove="Resources\Raw\thegirl.wav" />
 	  <None Remove="Resources\Raw\woohoo.wav" />
-		<None Remove="Resources\Images\wot.png" />	
+		<None Remove="Resources\Images\wot.png" />
+		<None Remove="Resources\Images\ring.png"/>
 	</ItemGroup>
 
 	<ItemGroup>
